@@ -5,175 +5,172 @@
     <link rel="icon" type="image/svg+xml" href="./workintech.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workintech + 🍕</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .header {
-        background-color: #d32f2f;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .product-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
-      .price {
-        font-size: 24px;
-        font-weight: bold;
-      }
-
-      .quantity-controls {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .size-options,
-      .sauce-options {
-        margin-bottom: 30px;
-      }
-
-      .ingredients {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-bottom: 30px;
-      }
-
-      .checkbox-group {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .notes {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-
-      .total {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        padding: 10px 0;
-        border-top: 1px solid #ddd;
-      }
-
-      .submit-btn {
-        background-color: #ffc107;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 100%;
-        font-weight: bold;
-      }
-
-      select,
-      input[type="radio"] {
-        margin: 5px 0;
-      }
-
-      h3 {
-        margin-bottom: 15px;
-      }
-    </style>
   </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #d32f2f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .price {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .quantity {
+      display: inline-block;
+      margin: 10px 0;
+    }
+
+    .quantity button {
+      background-color: #ffc107;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin: 20px 0;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .radio-group {
+      margin: 10px 0;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .total {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .submit-btn {
+      background-color: #ffc107;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <h1>Teknolojik Yemekler</h1>
-      </header>
+    <div class="header">
+      <h1>Teknolojik Yemekler</h1>
+    </div>
 
-      <div class="product-title">
-        <h2>Position Absolute Acı Pizza</h2>
-        <div class="price-container">
-          <span class="price">85.50₺</span>
-          <div class="quantity-controls">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+    <form>
+      <h2>Position Absolute Acı Pizza</h2>
+
+      <div class="price">85.50₺</div>
+
+      <div class="quantity">
+        <button type="button">-</button>
+        <span>1</span>
+        <button type="button">+</button>
+      </div>
+
+      <div class="form-group">
+        <label>Boyut Seç *</label>
+        <div class="radio-group">
+          <div>
+            <input type="radio" name="size" id="small" />
+            <label for="small">Küçük</label>
+          </div>
+          <div>
+            <input type="radio" name="size" id="medium" />
+            <label for="medium">Orta</label>
+          </div>
+          <div>
+            <input type="radio" name="size" id="large" />
+            <label for="large">Büyük</label>
           </div>
         </div>
       </div>
 
-      <div class="size-options">
-        <h3>Boyut Seç</h3>
-        <div>
-          <input type="radio" id="small" name="size" value="small" />
-          <label for="small">Küçük</label>
-        </div>
-        <div>
-          <input type="radio" id="medium" name="size" value="medium" />
-          <label for="medium">Orta</label>
-        </div>
-        <div>
-          <input type="radio" id="large" name="size" value="large" />
-          <label for="large">Büyük</label>
-        </div>
-      </div>
-
-      <div class="sauce-options">
-        <h3>Hamur Seç</h3>
+      <div class="form-group">
+        <label>Hamur Seç *</label>
         <select>
           <option>Hamur Kalınlığı</option>
           <option>İnce</option>
-          <option>Normal</option>
           <option>Kalın</option>
         </select>
       </div>
 
-      <div class="ingredients">
+      <div class="form-group">
+        <label>Ek Malzemeler</label>
         <div class="checkbox-group">
-          <input type="checkbox" id="pepperoni" />
-          <label for="pepperoni">Pepperoni</label>
+          <div>
+            <input type="checkbox" id="pepperoni" />
+            <label for="pepperoni">Pepperoni</label>
+          </div>
+          <div>
+            <input type="checkbox" id="sosis" />
+            <label for="sosis">Sosis</label>
+          </div>
+          <div>
+            <input type="checkbox" id="kasar" />
+            <label for="kasar">Kaşar</label>
+          </div>
+          <div>
+            <input type="checkbox" id="mantar" />
+            <label for="mantar">Mantar</label>
+          </div>
+          <div>
+            <input type="checkbox" id="sogan" />
+            <label for="sogan">Soğan</label>
+          </div>
+          <div>
+            <input type="checkbox" id="jalapeno" />
+            <label for="jalapeno">Jalapeno</label>
+          </div>
         </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="sosis" />
-          <label for="sosis">Sosis</label>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="kasar" />
-          <label for="kasar">Kaşar</label>
-        </div>
-        <!-- Diğer malzemeler buraya eklenebilir -->
       </div>
 
-      <textarea
-        class="notes"
-        placeholder="Sipariş notunuzu buraya yazabilirsiniz"
-        rows="4"
-      ></textarea>
+      <div class="form-group">
+        <label>Sipariş Notu</label>
+        <textarea
+          placeholder="Siparişiniz hakkında eklemek istediğiniz not"
+        ></textarea>
+      </div>
 
       <div class="total">
-        <span>Toplam</span>
-        <span>85.50₺</span>
+        <div>Seçimler: 25.00₺</div>
+        <div>Toplam: 110.50₺</div>
       </div>
 
-      <button class="submit-btn">SİPARİŞ VER</button>
-    </div>
+      <button type="submit" class="submit-btn">SİPARİŞ VER</button>
+    </form>
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
