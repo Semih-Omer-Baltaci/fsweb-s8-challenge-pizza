@@ -1,16 +1,179 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./workintech.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workintech + 🍕</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: #d32f2f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .product-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .quantity-controls {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .size-options,
+      .sauce-options {
+        margin-bottom: 30px;
+      }
+
+      .ingredients {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .notes {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .total {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+      }
+
+      .submit-btn {
+        background-color: #ffc107;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+      }
+
+      select,
+      input[type="radio"] {
+        margin: 5px 0;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+      }
+    </style>
   </head>
 
   <body>
+    <div class="container">
+      <header class="header">
+        <h1>Teknolojik Yemekler</h1>
+      </header>
+
+      <div class="product-title">
+        <h2>Position Absolute Acı Pizza</h2>
+        <div class="price-container">
+          <span class="price">85.50₺</span>
+          <div class="quantity-controls">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="size-options">
+        <h3>Boyut Seç</h3>
+        <div>
+          <input type="radio" id="small" name="size" value="small" />
+          <label for="small">Küçük</label>
+        </div>
+        <div>
+          <input type="radio" id="medium" name="size" value="medium" />
+          <label for="medium">Orta</label>
+        </div>
+        <div>
+          <input type="radio" id="large" name="size" value="large" />
+          <label for="large">Büyük</label>
+        </div>
+      </div>
+
+      <div class="sauce-options">
+        <h3>Hamur Seç</h3>
+        <select>
+          <option>Hamur Kalınlığı</option>
+          <option>İnce</option>
+          <option>Normal</option>
+          <option>Kalın</option>
+        </select>
+      </div>
+
+      <div class="ingredients">
+        <div class="checkbox-group">
+          <input type="checkbox" id="pepperoni" />
+          <label for="pepperoni">Pepperoni</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="sosis" />
+          <label for="sosis">Sosis</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="kasar" />
+          <label for="kasar">Kaşar</label>
+        </div>
+        <!-- Diğer malzemeler buraya eklenebilir -->
+      </div>
+
+      <textarea
+        class="notes"
+        placeholder="Sipariş notunuzu buraya yazabilirsiniz"
+        rows="4"
+      ></textarea>
+
+      <div class="total">
+        <span>Toplam</span>
+        <span>85.50₺</span>
+      </div>
+
+      <button class="submit-btn">SİPARİŞ VER</button>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-
 </html>
